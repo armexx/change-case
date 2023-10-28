@@ -1,24 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import CaseChange from './components/CaseChange';
+import Alert from './components/Alert';
+import About from './components/About';
+import Notfound from './components/Notfound';
+import Copyright from './components/Copyright';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App(){
+const [mode,setMode] = useState('light');
+const [alert,setAlert] = useState(null);
+const showAlert = (message,type)=>{
+  setAlert({
+    msg: message,
+    type: type
+  });
+  setTimeout(()=>{
+    setAlert(null);
+  },1000);
+}
+const toggleMode = ()=>{
+  if(mode === 'light'){
+    setMode('dark');
+    document.body.style.backgroundColor='#2b2b2b';
+  }else{
+    setMode('light');
+    document.body.style.backgroundColor='#ffffff';
+  }
+}
+  return(
+    <BrowserRouter>
+      <div className="main">
+        <div className="App">
+          <Navbar title="Change Case" mode={mode} toggleMode={toggleMode}/>
+          <div className="container vp-height">
+            <Alert alert={alert}/>
+            <Routes>
+              <Route exact path='/' element={<CaseChange mode={mode} showAlert={showAlert}/>}/>
+              <Route exact path='/about' element={<About mode={mode}/>} />
+              <Route path='*' element={<Notfound mode={mode}/>} />
+            </Routes>
+          </div>
+          <Copyright mode={mode} toggleMode={toggleMode}/>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
