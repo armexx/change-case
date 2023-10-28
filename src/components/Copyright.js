@@ -6,7 +6,7 @@ function Copyright(props){
     <footer className={`text-center text-lg-start bg-${props.mode==='light'?'light':'dark'}`}>
         <div className={`text-center p-4 text-${props.mode==='light'?'dark':'light'}`}>
         Copyright © {cYear}: <span className="text-reset fw-bold">ChangeCase</span>
-        <p className='sm-font text-muted'>Supported by awesomemediatech</p>
+        <p className='sm-font text-muted m-0'>Supported by awesomemediatech</p>
         </div>
     </footer>
   )
