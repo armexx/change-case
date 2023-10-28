@@ -51,6 +51,7 @@
   overflow: hidden;
   margin: 15px auto;
   border-radius: 50%;
+  background: #ccc;
 }
 .dp img {
   width: auto;
