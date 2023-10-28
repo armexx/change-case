@@ -77,7 +77,7 @@ export default function CaseChange(props){
     return(
     <div>
       <Heading heading="Convert case according to your needs"/>
-      <p>A case converter is an invaluable tool for enhancing text formatting and readability. Whether you need to transform text to uppercase, lowercase, title case, or even sentence case, this versatile tool simplifies the process. Case conversion is essential for various applications, from content writing and coding to data formatting. With our user-friendly online case converter, you can effortlessly fine-tune your text to meet specific style and content requirements.</p>
+      <p className={`text-${props.mode==='light'?'dark':'light'}`}>A case converter is an invaluable tool for enhancing text formatting and readability. Whether you need to transform text to uppercase, lowercase, title case, or even sentence case, this versatile tool simplifies the process. Case conversion is essential for various applications, from content writing and coding to data formatting. With our user-friendly online case converter, you can effortlessly fine-tune your text to meet specific style and content requirements.</p>
       <div className="mb-3">
         <div className='position-relative'>
           <button disabled={text.length===0} className='btn btn-sm btn-success position-absolute top-0 end-0' onClick={copyText}>copy</button>
