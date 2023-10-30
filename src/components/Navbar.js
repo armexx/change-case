@@ -18,6 +18,9 @@ export default function Navbar(props){
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About Me</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/how-it-works">How it works</Link>
+              </li>
             </ul>
             <div className="form-check form-switch d-flex justify-content-end">
               <label className={`form-check-label text-${props.mode==='light'?'dark':'light'} pe-2 me-5`} htmlFor="flexSwitchCheckDefault">{`${props.mode==='dark'?'Dark':'Light'} Mode`}</label>
