@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import CaseChange from './components/CaseChange';
 import Alert from './components/Alert';
 import About from './components/About';
+import HowItWorks from './components/HowItWorks';
 import Notfound from './components/Notfound';
 import Copyright from './components/Copyright';
 
@@ -39,6 +40,7 @@ const toggleMode = ()=>{
             <Routes>
               <Route exact path='/' element={<CaseChange mode={mode} showAlert={showAlert}/>}/>
               <Route exact path='/about' element={<About mode={mode}/>} />
+              <Route exact path='/how-it-works' element={<HowItWorks mode={mode}/>} />
               <Route path='*' element={<Notfound mode={mode}/>} />
             </Routes>
           </div>
