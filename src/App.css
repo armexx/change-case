@@ -31,8 +31,7 @@
   height: 50px;
 }
 .vp-height {
-  height: 90vh;
-  overflow-y: auto;
+  height: 100%;
 }
 .modal-alert {
   position: absolute;
